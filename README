@@ -1,0 +1,16 @@
+Scripts for mirroring an SVN repository in git.
+
+The basic git-svn commands are OK for creating a local copy of an SVN
+repository, but it's not obvious how the normal --mirror behavior can be
+replicated.
+
+These scripts use git svn clone to create a vanilla git copy of an svn
+repository, then create local branches/tags which mirror those in the
+original svn repo.  A second script automates the process of fetching
+the svn changes (to remote tracking branches) and rebasing them onto
+the local branches/local tags.
+
+In this manner, the git mirror can be cloned, and the clones will
+show the tags/branches of the svn repo as one would expect.  Without
+these extra steps, only the default head (master) of the original git
+repo would show up.

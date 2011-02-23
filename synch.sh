@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 if [ $# -lt 1 ]
 then
     echo "Usage: $0 mirrorDir"
@@ -33,5 +32,5 @@ for tagName in $(git branch -r | tr -d ' ' | grep '^svn/tags/')
 do
     localTag=$(echo $tagName | cut -d '/' -f 1 --complement)
     #update/create local tag
-    git update-ref refs/tags/$localTag $tagName
+    git update-ref refs/$localTag $tagName
 done

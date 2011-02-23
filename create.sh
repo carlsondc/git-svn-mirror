@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 if [ $# -lt 2 ]
 then
     echo "Usage: $0 src dest [extra git svn clone options]"
